@@ -1,15 +1,13 @@
-using ClassLibrary;
-using Microsoft.AspNetCore.Mvc.Testing;
 using System;
 using Xunit;
 
 namespace IntegrationTests
 {
-    public class UnitTest1
+    public class UnitTest1 : IClassFixture<WebApplicationTestFactory>
     {
-        private readonly WebApplicationFactory<Startup> _factory;
+        private readonly WebApplicationTestFactory _factory;
 
-        public UnitTest1(WebApplicationFactory<ClassLibrary.Startup> factory)
+        public UnitTest1(WebApplicationTestFactory factory)
         {
             _factory = factory;
         }
